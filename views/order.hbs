@@ -1,0 +1,23 @@
+{{> header user=user}}
+
+
+<!-- Shoping Cart Section Begin -->
+<section class="shoping-cart spad">
+    {{#if error}}
+    <div class="alert alert-warning" role="alert">
+        Vui lòng đăng nhập!
+    </div>
+    {{else}}
+    {{#if status}}
+    <div class="alert alert-success" role="alert">
+        Đặt hàng thành công!
+    </div>
+    {{else}}
+
+    {{>orderDetails order=order discount=discount}}
+
+    {{/if}}
+
+    {{/if}}
+</section>
+<!-- Shoping Cart Section End -->

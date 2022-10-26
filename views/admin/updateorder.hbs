@@ -1,0 +1,57 @@
+{{!--
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{{!--
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> --}}
+<!------ Include the above in your HEAD tag ---------->
+{{#if ok}}
+<div class="alert alert-success" role="alert">
+    Cập nhật thành công
+</div>
+{{/if}}
+
+<form class="form-horizontal" action="/admin/order/update" method="post">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Cập nhật đơn hàng</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="product_id">Code</label>
+            <div class="col-md-4">
+                <input id="product_id" value="{{order.idorder}}" class="form-control input-md" required="" type="text"
+                    disabled>
+                <input name="idorder" placeholder="Mã giảm giá" class="form-control input-md" required="" type="text"
+                    value="{{order.idorder}}" hidden>
+            </div>
+        </div>
+
+
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="product_weight">Trạng thái</label>
+            <div class="col-md-4">
+                <input id="product_weight" name="status" placeholder="Trạng thái" class="form-control input-md"
+                    required="" type="text" value="{{order.status}}">
+
+            </div>
+        </div>
+
+
+
+
+        <!-- Text input-->
+        <div class="form-group">
+
+            <!-- Button -->
+            <div class="form-group">
+                <div class="col-md-4">
+                    <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary">Cập
+                        nhật</button>
+                </div>
+            </div>
+
+    </fieldset>
+</form>
