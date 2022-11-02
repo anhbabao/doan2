@@ -1,0 +1,49 @@
+{{>header user=user}}
+{{#if error}}
+<div class="alert alert-warning" role="alert">
+    Vui lòng đăng nhập để sử dụng giỏ hàng!
+</div>
+{{else}}
+<div class="container">
+    <div class="row gutters">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="account-settings">
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+                            </div>
+                            <h5 class="user-name">{{user.name}}</h5>
+                        </div>
+                        <div class="list-group">
+                            <a href="/profile/orders" class="list-group-item list-group-item-action">Danh sách đơn
+                                hàng</a>
+                            <a href="/profile/info" class="list-group-item list-group-item-action">Thông tin cá nhân</a>
+                            <a href="/logout" class="list-group-item list-group-item-action">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    {{#if (isInfoPage page) includeZero=true}}
+                    {{>userInfo user=user}}
+                    {{/if}}
+
+                    {{#if (isOrderPage page) includeZero=true}}
+                    {{>listOrder orders=orders}}
+                    {{/if}}
+
+                    {{!-- {{#if (isOrderDetailPage page) includeZero=true}}
+                    {{>listOrder orders=orders}}
+                    {{/if}} --}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
